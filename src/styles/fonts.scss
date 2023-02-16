@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Lobster&display=swap');
+
+$lobster: 'Lobster', cursive;
+$roboto:'Roboto Mono', monospace;;
+
+
+@mixin logo ($color){
+    font-family: 'Lobster', cursive;
+    font-size: 3em;
+    font-weight: 400;
+    color:$color
+}
+
+@mixin light ($color,$size){
+    font-family: $roboto;
+    font-size:$size;
+    font-weight: 300;
+    color:$color
+}
+
+@mixin regular ($color,$size){
+    font-family: $roboto;
+    font-size:$size;
+    font-weight: 400;
+    color:$color
+}
+
+@mixin bold ($color,$size){
+    font-family: $roboto;
+    font-size:$size;
+    font-weight: 700;
+    color:$color
+}
