@@ -5,7 +5,7 @@ import Car from "./components/page/car"
 import Categories from "./components/page/categories"
 import Products from "./components/page/products"
 import Favorites from "./components/page/favorite"
-import Product from "./components/pure/product"
+import ProductOpened from "./components/page/productOpened"
 import "./styles/styles.scss"
 import favoriteIcon from "../src/media/favorite.svg"
 import homeIcon from "../src/media/home.svg"
@@ -34,7 +34,7 @@ function App() {
                     <Route element={<Car setCar={setCar} car={car}/>} path="/car"/>
                     <Route element={<Categories/>} path="/categories"/>
                     <Route element={<Products/>} path="/products"/>
-                    <Route element={<Product/>} path="/product/:name"/>
+                    <Route element={<ProductOpened/>} path="/product/:name"/>
                 </Routes>
           </div>
         :

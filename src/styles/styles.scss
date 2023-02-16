@@ -67,6 +67,11 @@ input{
     max-height: auto;
 }
 
+.ProductOpenedContainer{
+    min-height: 100vh;
+    max-height: auto;
+}
+
 //Class
 .bg-salmon{
     background-color: $primaryColor
@@ -82,4 +87,11 @@ input{
 
 .text-darkGray{
     color: $darkGray
+}
+
+.salmonBtn{
+        background-color: $primaryColor;
+        border: 3px solid rgba(255, 255, 255, 0);
+        padding:0.5em 1em;
+        @include bold ($darkGray, 2em)
 }
