@@ -14,7 +14,7 @@ function Home({setCategoryState,categoryState,setMenuDisplay}) {
         <Header setMenuDisplay={setMenuDisplay}/>
         <Category setCategoryState={setCategoryState} categoryState={categoryState}/>
       </div>
-      <ProductsContainer/>
+      <ProductsContainer categoryState={categoryState}/>
     </div>
   )
 }

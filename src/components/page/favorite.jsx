@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Favorite() {
+function Favorite({favorites,setFavorites}) {
   return (
-    <div>Favorite</div>
+    <div>
+      
+    </div>
   )
 }
 

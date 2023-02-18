@@ -18,8 +18,8 @@ function Header({setMenuDisplay}) {
 
        <div className="d-flex flex-column ">
           <div className="d-flex flex-row  justify-content-between align-items-center d-md-none col-md-12">
-             <img onClick={setMenuDisplay} src={categoryIcon} alt="categoryIcon" className="whiteIcon" width="45px" height="45px"/>
-             <img src={searchIcon} alt="searchIcon" className="whiteIcon" width="45px" height="45px"/>
+             <img onClick={setMenuDisplay} src={categoryIcon} alt="categoryIcon" className="whiteIcon iconEffect" width="45px" height="45px"/>
+             <img src={searchIcon} alt="searchIcon" className="whiteIcon iconEffect" width="45px" height="45px"/>
           </div>
           <h1 className="text-light logo my-3">Monkey Bar</h1>
        </div>
