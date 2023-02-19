@@ -7,11 +7,11 @@ import Product from '../pure/product'
 
 
 
-function Home({setCategoryState,categoryState,setMenuDisplay}) {
+function Home({setCategoryState, categoryState, setMenuDisplay, searchBar, displaySearchBar}) {
   return (
     <div className="m-3">
       <div className="mx-3">
-        <Header setMenuDisplay={setMenuDisplay}/>
+        <Header setMenuDisplay={setMenuDisplay} searchBar={searchBar} displaySearchBar={displaySearchBar}/>
         <Category setCategoryState={setCategoryState} categoryState={categoryState}/>
       </div>
       <ProductsContainer categoryState={categoryState}/>

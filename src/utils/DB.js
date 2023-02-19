@@ -11,8 +11,8 @@
         }
     },
     {
-        Nombre:"Bohemian Pillsen",
-        Descripcion:"Cerveza Pillsen patagonia de 410 ml",
+        Nombre:"Bohemian Pilssener",
+        Descripcion:"Cerveza Pilssener patagonia de 410 ml",
         Texto:"Cerveza Bohemian Pillsen de 410 ml, patagonia te trae esta cerveza que mezcla lo mejor de una Pillsen clásica con un nuevo sabor.",
         Precio:"400",
         categoria:{
@@ -121,7 +121,7 @@
         }
     },
     {
-        Nombre:"Hamburguesa Monkey doble",
+        Nombre:"Hamburguesa Monkey Doble",
         Descripcion:"Cerveza Pillsen patagonia de 350 ml",
         Texto:"Cerveza Bohemian Pillsen de 350 ml, patagonia te traer esta verveza que mezcla lo mejor de una Pillsen clásica con un nuevo sabor.",
         Precio:"1200",
