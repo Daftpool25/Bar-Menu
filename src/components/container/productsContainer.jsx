@@ -12,7 +12,7 @@ function ProductsContainer({categoryState}) {
   const navigate=useNavigate();
 
   return (
-    <div className="d-flex flex-row justify-content-center gap-2 py-4 flex-wrap flex-md-nowrap">
+    <div className="d-flex flex-row justify-content-center gap-3 py-4 flex-wrap pb-5 mb-3">
          {categoryState==="POPULAR" && productsList.map( (item,index) =>  <Product img={img3} tittle={item.Nombre} description={item.Descripcion} price={item.Precio} key={index} onClick={()=> navigate(`/product/${item.Nombre}`)}/> )}
          {categoryState==="BEBIDAS" && productsList.map( (item,index) =>{ if(item.categoria.categoria==="Bebidas"){ return <Product img={img3} tittle={item.Nombre} description={item.Descripcion} price={item.Precio} key={index} onClick={()=> {navigate(`/product/${item.Nombre}`)}}/> }})}
          {categoryState==="COMIDA" && productsList.map( (item,index) =>{ if(item.categoria.categoria==="Comidas"){ return <Product img={img3} tittle={item.Nombre} description={item.Descripcion} price={item.Precio} key={index} onClick={()=> {navigate(`/product/${item.Nombre}`)}}/> }})}

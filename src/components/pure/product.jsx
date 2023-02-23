@@ -39,15 +39,17 @@ function Product({tittle, description,price,onClick}) {
 
 
   return (
-    <div onClick={openProduct} className="productContainer bg-gradient position-relative col-11 col-md-3 rounded-4">
-      <div className="d-flex flex-column py-3">
-          <img src={img} alt="product"/>
-          <h1 className="text-white px-3">{tittle}</h1>
-          <div className="d-flex flex-row align-items-center justify-content-center gap-3 p-3">
-              <label className="text-light">{description}</label>
-              <h1 className="text-white">{price}$</h1>
+    <div className="col-5 col-md-3 col-lg-3 mt-5 pt-3 mb-5">
+          <div onClick={openProduct} className="productContainer bg-gradient position-relative  rounded-top rounded-5">
+            <img src={img} alt="product" className="productImg position-absolute top-0 start-50 translate-middle"/>
+            <div className="pt-5 px-3 pb-3 d-flex flex-column justify-content-center  textContainer">
+                <h1 className="text-white pt-4">{tittle}</h1>
+            </div>
+            <div className="position-absolute top-100 start-50 translate-middle">
+                  <label className="text-salmon bg-darkGray salmonContainer rounded-3 px-3 py-1">{price}$</label>
+            </div>
           </div>
-      </div>
+
     </div>
   )
 }

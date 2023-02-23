@@ -28,7 +28,6 @@ function Header({setMenuDisplay,displaySearchBar,searchBar}) {
                   </form>
             }
           </div>
-          <h1 className="text-light logo my-3">Monkey Bar</h1>
        </div>
 
     </div>

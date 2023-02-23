@@ -3,12 +3,12 @@
 
 
 body, #root{
-    background:$ligthGray;
+    background:$darkGray;
     margin:0px;
     padding:0px;
 
     h1{
-        @include bold(white,2em)
+        @include bold(white,1.2em)
 
     }
     p,label{
@@ -22,18 +22,27 @@ body, #root{
 
 .productContainer{
     background-color: $darkGray;
+    height: 150px;
     text-align: center;
-    &:hover{
-        transform: scale(1.2);
-        transition: 1s;
-        filter: saturate(2);
-        box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.589);
+
+    .textContainer{
+        height: 100%;
     }
 
     .productBtn{
         background-color: $primaryColor;
         border: 3px solid rgba(255, 255, 255, 0);
         @include bold ($darkGray, 4em)
+    }
+}
+
+.productImg{
+    height: 150px;
+    width: auto;
+    &:hover{
+        transform: scale(1.2);
+        filter: saturate(2);
+        transition: 1s;
     }
 }
 
@@ -45,7 +54,7 @@ input{
     border: none;
     outline: none; 
     @include regular (white, 1em);
-    ::placeholder{
+    &::placeholder{
         color:white
     }  
 }
@@ -90,11 +99,37 @@ input{
     color: $darkGray
 }
 
+.bg-lightGray{
+    background-color: rgba(255, 255, 255, 0.479)
+}
+
 .salmonBtn{
         background-color: $primaryColor;
-        border: 3px solid rgba(255, 255, 255, 0);
         padding:0.5em 1em;
-        @include bold ($darkGray, 2em)
+        border: none;
+        @include regular ($darkGray, 2em);
+        &:hover{
+            background-color: $darkGray;
+            border: 5px solid $primaryColor ; 
+            color:$primaryColor;
+            transition: 1s;
+        }
+}
+
+.darkButton{
+    background-color: $darkGray;
+    border: 2px solid $primaryColor ; 
+    @include regular ($primaryColor, 1em);
+    &:hover{
+        background-color: $primaryColor;
+        border: none;
+        color:$darkGray;
+        transition: 1s;
+    }
+}
+
+.salmonContainer{
+    border: 2px solid $primaryColor ; 
 }
 
 .iconEffect{
@@ -111,4 +146,13 @@ input{
         transform: scale(1.1);
         transition: 1s;
     }
+}
+.tittle{
+    font-size: 2.5em;
+}
+
+
+
+.toast{
+     font-family: $roboto;
 }
