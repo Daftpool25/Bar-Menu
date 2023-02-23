@@ -1,5 +1,4 @@
 import React from 'react'
-import closeIcon from "../../media/cancel.svg"
 import backIcon from "../../media/back.svg"
 import dotsIcon from "../../media/dots.svg"
 
@@ -15,18 +14,26 @@ import mojito from "../../media/products/mojito.png"
 import burguer1 from "../../media/products/burguer1.png"
 import burguer2 from "../../media/products/burguer2.png"
 import lomito from "../../media/products/lomito.png"
+import { useNavigate } from 'react-router-dom'
 
 function Car({car, removeProductToCar}) {
  
- 
+  const navigate=useNavigate();
+
+
+  let total 
+  if(car.length>1){total=`${car.reduce((a,b) =>{return (a.product.Precio*a.qty)+(b.product.Precio*b.qty)})}`}
+  else if(car.length === 1){total= car[0].product.Precio*car[0].qty}else{
+    total="0.00"
+  }
 
   return (
     <div className="carContainer d-flex flex-column p-4 mb-3">
        
        
         <div className="d-flex flex-row justify-content-between pb-3">
-            <img src={backIcon} width="30px" alt="backIcon" className="whiteIcon iconEffect" onClick={() => comeBackToHome("/")} />
-            <img src={dotsIcon} width="30px" alt="dotsIcon" className="whiteIcon iconEffect" onClick={()=> comeBackToHome("/")} />   
+            <img src={backIcon} width="30px" alt="backIcon" className="whiteIcon iconEffect" onClick={() => navigate(-1)} />
+            <img src={dotsIcon} width="30px" alt="dotsIcon" className="whiteIcon iconEffect" onClick={()=> navigate("/")} />   
         </div>
 
 
@@ -34,8 +41,8 @@ function Car({car, removeProductToCar}) {
 
         <div className="d-flex flex-row col-10 mt-4">
           <p className="col-7" >Item</p>
-          <p className="col-2">Cant</p>
-          <p className="col-3 opacity-75">Sub</p>
+          <p className="col-2 ">Cant</p>
+          <p className="col-3 px-2 opacity-75">Sub</p>
         </div>
 
         {car.map( (item,index) => {
@@ -76,17 +83,23 @@ function Car({car, removeProductToCar}) {
         })}
 
         <div className="col-12 d-flex flex-row align-items-center my-4">
-          <label className="col-8 opacity-75">Total</label>
-          <h1 className="col-4 tittle bg-lightGray rounded-3 text-center">{
-            car.length>0?
-            //car.reduce((a,b) => (a.product.Precio)+(b.product.Precio))
-            "ab"
-            :
-            "0.00"
-          }$</h1>
+          <label className="col-7 opacity-75">Total</label>
+          <div className="col-5">
+
+            {
+              car.length>0?
+              <h1 className="tittle bg-lightGray rounded-3 text-center">
+                {total}$
+              </h1>
+              :
+              <h1 className="tittle bg-lightGray rounded-3 px-2 text-center">0.00$</h1>
+            }
+
+          </div>
+
         </div>
 
-        <button className="salmonBtn rounded-4 mb-5">Pagar</button>
+        <button onClick={()=> console.log(total)} className="salmonBtn rounded-4 mb-5">Pagar</button>
     </div>
   )
 }

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import backIcon from "../../media/back.svg"
 import favIcon from "../../media/favorite.svg"
+import favFilledIcon from "../../media/favoriteFill.svg"
+
 
 import { useParams ,useNavigate} from 'react-router-dom'
 import { productsList } from '../../utils/DB'
@@ -20,7 +22,7 @@ import lomito from "../../media/products/lomito.png"
 
 
 
-function ProductOpened({addProductToCar, addProductToFav}) {
+function ProductOpened({addProductToCar, addProductToFav, favorites}) {
 
     const navigate= useNavigate()
     const {name}=useParams();
@@ -59,11 +61,16 @@ function ProductOpened({addProductToCar, addProductToFav}) {
         }, 500);
     }
 
+    const alreadyFavSelected= favorites.find( item => item.Nombre === product.Nombre)
+
+
   return (
     <div className="d-flex flex-column p-3 pb-5 bg-dark ProductOpenedContainer bg-gradient">
         <div className="d-flex flex-row justify-content-between">
-            <img src={backIcon} alt="backIcon" className="whiteIcon iconEffect" onClick={() => comeBackToHome("/")} />
-            <img src={favIcon} alt="dotsIcon" className="whiteIcon iconEffect" onClick={()=> addProductToFav(product)} />   
+            <img src={backIcon} alt="backIcon" className="whiteIcon iconEffect" onClick={() => comeBackToHome(-1)} />
+            {!alreadyFavSelected && <img src={favIcon} alt="favIcon" className="whiteIcon iconEffect" onClick={()=> addProductToFav(product)} /> }  
+            {alreadyFavSelected && <img src={favFilledIcon} alt="favIcon" className="whiteIcon iconEffect" onClick={()=> addProductToFav(product)} /> }  
+
         </div>
         <div className="d-flex flex-column">
             <img src={img} alt="productImage" className="saturated"/>

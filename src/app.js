@@ -17,6 +17,12 @@ import toast, { Toaster } from 'react-hot-toast'
 
 function App() {
 
+  //TODO hacer componentes puros a los productos del carrito y fav
+  //Estructurar que no quede funciones en los componentes
+  // ver que no se recarguen las imagenes
+  // reutilizar funciones como nav por ejemplo o las de selector de img
+  //funcion de busqueda
+
   const [categoryState,setCategoryState]=useState("POPULAR")
   const [menuDisplay, setMenuDisplayState] = useState(true)
   const [searchBar, setSearchBar] = useState(true)
@@ -76,13 +82,20 @@ function App() {
 
    if(alreadyExist){
 
-    toast.success('El producto ya pertenece a favoritos')
+    removeFav(product.Nombre)
+    toast.success('El producto fue quitado de favoritos')
 
    }else{
     setFavorites([...favorites,product])
     toast.success('Producto agregado a Favoritos')
   }
 }
+
+  function removeFav(product){
+    let newArray=favorites.filter( item => item.Nombre !== product)
+    setFavorites(newArray)
+  }
+
 
 
   return (
@@ -92,10 +105,10 @@ function App() {
           <Toaster toastOptions={{duration:3000, className:'.toast'}}/>
                 <Routes>
                     <Route exact element={<Home setCategoryState={setCategoryState} categoryState={categoryState} setMenuDisplay={setMenuDisplay} searchBar={searchBar} displaySearchBar={displaySearchBar}/>} path="/"/>
-                    <Route element={<Favorites favorites={favorites} setFavorites={setFavorites}/>} path="/favorites"/>
+                    <Route element={<Favorites favorites={favorites} removeFav={removeFav}/>} path="/favorites"/>
                     <Route element={<Car car={car} removeProductToCar={removeProductToCar}/>} path="/car"/>
                     <Route element={<Products/>} path="/products"/>
-                    <Route element={<ProductOpened addProductToCar={addProductToCar} addProductToFav={addProductToFav} />} path="/product/:name"/>
+                    <Route element={<ProductOpened addProductToCar={addProductToCar} addProductToFav={addProductToFav} favorites={favorites}/>} path="/product/:name"/>
                 </Routes>
           </div>
         :

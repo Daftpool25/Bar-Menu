@@ -147,6 +147,14 @@ input{
         transition: 1s;
     }
 }
+
+.expanded{
+    &:hover{
+        transform: scale(1.1);
+        transition: 1s;
+    }
+}
+
 .tittle{
     font-size: 2.5em;
 }
